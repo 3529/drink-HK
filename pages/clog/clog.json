@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "打卡日志",
+  "enablePullDownRefresh": true,
+  "backgroundColorTop": "#F7F8FA",
+  "backgroundTextStyle": "dark"
+}

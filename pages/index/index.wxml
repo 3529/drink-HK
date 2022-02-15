@@ -1,0 +1,74 @@
+<!--index.wxml-->
+<view class='flex just-content-end' style="padding-right: 60rpx;">
+  <image mode="aspectFit" bindtap="showHelp" style="height: 60rpx;width: 60rpx;" src="../../static/images/help.png">
+  </image>
+</view>
+<van-popup show="{{ clockInShow }}" round closeable position="bottom" custom-style="height: 80%" bind:close="closeClockIn">
+  <view class='clock-in-popup'>
+    <!-- <van-divider contentPosition="center" customStyle="color: #ccc;">本次饮水量</van-divider> -->
+    <view class='center mt-30' style="color: #ccc;font-size:34rpx;">本次饮水量</view>
+    <view class='intake'>
+      <text>{{intake}} ml</text>
+    </view>
+    <view class='m-30'>
+      <van-slider value="100" step="100" min='0' max='600' bind:drag='sliderDrag' bind:change='sliderDrag' />
+    </view>
+    <view style="margin-top:100rpx;"></view>
+    <view class='center mt-30' style="color: #ccc;font-size:34rpx;">下次提醒时间（当日）</view>
+    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+      <view class='time-check mt-60'>
+        <view wx:for="{{clockTimes}}" wx:for-item="time" wx:for-idx="index" wx:key="index" class="{{index === currentIndex ? 'active' : ''}}" bindtap="changeCurrentIndex" data-index="{{index}}">{{time}}</view>
+      </view>
+    </scroll-view>
+    <view>
+      <button class='mt-60 blue-btn' bindtap="subscribe">确认打卡</button>
+    </view>
+  </view>
+</van-popup>
+<van-popup show="{{ clockInModifyShow }}" round closeable position="bottom" custom-style="height: 80%" bind:close="closeClockInModify">
+  <view class='clock-in-popup'>
+    <view style="margin-top:100rpx;"></view>
+    <view class='center mt-30' style="color: #ccc;font-size:34rpx;">下次提醒时间（当日）</view>
+    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+      <view class='time-check mt-60'>
+        <view wx:for="{{clockTimes}}" wx:for-item="time" wx:for-idx="index" wx:key="index" class="{{index === currentIndex ? 'active' : ''}}" bindtap="changeCurrentIndex" data-index="{{index}}">{{time}}</view>
+      </view>
+    </scroll-view>
+    <view>
+      <button class='mt-60 blue-btn' bindtap="modifySubscribe">确认修改</button>
+    </view>
+  </view>
+</van-popup>
+<van-popup show="{{ helpShow }}" round position="bottom" bind:close="closeHelp">
+  <view class='help-popup'>
+    <view class='bold flex align-items-center' style="margin:60rpx 0 0;">
+      <image mode="aspectFit" bindtap="showHelp" style="height: 60rpx;width: 60rpx;transform: translateX(-20rpx);" src="../../static/images/help_red.png"></image>
+      小管家提醒:
+    </view>
+    <view class="mt-30">
+      1、请您在饮水后进行打卡,以便订阅下次提醒哦!
+    </view>
+    <view>
+      2、每次打卡可以选择下次提醒喝水的时间哦
+    </view>
+    <view>
+      3、推荐您勾选"总是保持以上选择,不再允许"选项
+    </view>
+    <view class="mt-30 flex just-content-end" style="margin-bottom:100rpx">
+      祝您有个好身体 ^_^</view>
+  </view>
+
+</van-popup>
+<view class="container">
+  <view class='p-60 bold white lh-20'>
+    <image class='icon' src="../../static/images/my_active_icon.png"></image>
+    <!-- <view>每天适量饮水</view> -->
+    <!-- <view>可以让您有个健康的身体</view> -->
+    <view>今日已饮水 <text style='color:#444;font-size: 70rpx;'>{{todayWaterIntake}}</text> ml</view>
+    <button class='mt-120' bindtap="showClockIn" wx:if="{{!isClockIn}}">打卡</button>
+    <button class='mt-120' bindtap="showClockInTip" style="color:#666" wx:else>待提醒 {{waitPushData.pushTime}}</button>
+    <!-- <button bindtap="sendMessage" class="mt-60" type="primary">测试推送</button> -->
+    <!-- <button bindtap="subscribe">订阅</button>
+        <button bindtap="sendMessage">推送</button> -->
+  </view>
+</view>

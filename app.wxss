@@ -1,0 +1,85 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+} 
+.blue-btn{
+  background-color: #0B67FF;
+  border-radius: 100rpx;
+  color:#ffffff;
+}
+.blue-btn:active{
+  background-color: #008aff;
+  border-radius: 100rpx;
+  color:#ffffff;
+}
+.m-30{
+  margin:30rpx;
+}
+.m-20{
+  margin:20rpx;
+}
+.mt-30{
+  margin-top: 30rpx;
+}
+.mt-60{
+  margin-top: 60rpx;
+}
+.mt-120{
+  margin-top: 120rpx;
+}
+.mt-240{
+  margin-top: 240rpx;
+}
+.white{
+  color:white;
+}
+.p-60{
+  padding: 60rpx;
+}
+.bold{
+  font-weight: bold;
+}
+.blue{
+  color:#00BFFF;
+}
+.lh-15{
+  line-height: 1.5;
+}
+.lh-20{
+  line-height: 2;
+}
+.orange{
+  color:#f80;
+}
+.text-block{
+  color:#222222;
+  font-weight: bold;
+}
+.position-relative{
+  position: relative;
+}
+.z-index{
+  z-index: 999;
+}
+.center{
+  text-align: center;
+}
+.flex{
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}
+.just-content-center{
+  justify-content: center;
+}
+.just-content-end{
+  justify-content: flex-end;
+}
+.align-items-center{
+  align-items: center;
+}

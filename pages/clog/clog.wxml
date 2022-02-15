@@ -1,0 +1,8 @@
+<!--pages/clog/clog.wxml-->
+<wxs module="filter" src="../../utils/filter.wxs" />
+
+<view style="padding-top: 20rpx;">
+  <van-cell-group inset>
+    <van-cell title="饮水 {{item.intake}} ml" value='完成' label="{{filter.formatDate(item.createTime)}}" wx:for="{{ clogList }}" wx:for-item='item' wx:for-idx="index" wx:key="index"/>
+  </van-cell-group>
+</view>

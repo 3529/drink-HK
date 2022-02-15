@@ -1,0 +1,4 @@
+/* pages/loading/loading.wxss */
+page{
+  background-color: rgb(118, 218, 255);
+}

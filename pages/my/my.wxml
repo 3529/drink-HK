@@ -1,0 +1,19 @@
+<!--pages/my/index.wxml-->
+<view class='my-container'>
+  <view class="wave"></view>
+  <view class='flex flex-column just-content-center align-items-center position-relative z-index'>
+    <view class='top flex align-items-center flex-column'>
+      <image src='{{avatarUrl}}' class='avatar mt-30'></image>
+      <text class='nickname'>{{nickname}}</text>
+    </view>
+    <!-- <view class="mt-60">
+      <text class='white bold' style="letter-spacing: 4rpx;">
+        一共陪伴了您 <text style='color:#444;font-size: 100rpx;'>{{days}}</text> 天
+      </text>
+    </view> -->
+    <view class="mt-30">
+       <button bindtap="clockInLog">打卡日志</button>
+    </view>
+    <button class='logout mt-120' plain="true" bindtap="logout" style="opacity: 0.3;">LOGOUT</button>
+  </view>
+</view>

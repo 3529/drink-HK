@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "openapi": []
+  },
+  "triggers": [{
+    "name": "timedPush",
+    "type": "timer",
+    "config": "0 0/30 0-23 * * * *"
+  }]
+}

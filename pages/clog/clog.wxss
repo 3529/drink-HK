@@ -1,0 +1,4 @@
+/* pages/clog/clog.wxss */
+page{
+  background-color: #F7F8FA;
+}

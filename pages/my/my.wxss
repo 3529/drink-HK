@@ -1,0 +1,74 @@
+/* pages/my/index.wxss */
+
+page{
+  background-color: #ffffff;  
+  padding-top: 160rpx;
+}
+/* .my-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+} */
+.top{
+  width: 750rpx;
+  padding:60rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  font-weight: bold;
+  color:#222;
+}
+.nickname{
+  margin-top: 30rpx;
+}
+.avatar{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+
+.logout{
+  position: fixed;
+  bottom: 100rpx;
+}
+
+
+
+/* 水波动画 */
+.wave {
+  position: absolute;
+  width: 750rpx;
+  height: 100vh;
+  background-color: rgb(118, 218, 255);
+}
+.wave::before,
+.wave::after{
+  content: "";
+  position: absolute;
+  width: 1750rpx;
+  height: 1750rpx;
+  top: -200rpx;
+  left: 50%;
+  background-color: rgba(255, 255, 255, .4);
+  border-radius: 45%;
+  transform: translate(-50%, -70%) rotate(0);
+  animation: rotate 6s linear infinite;
+  z-index: 10;
+}   
+.wave::after {
+  border-radius: 47%;
+  background-color: rgba(255, 255, 255, 1);
+  transform: translate(-50%, -70%) rotate(0);
+  animation: rotate 10s linear -5s infinite;
+  z-index: 20;
+}
+
+@keyframes rotate {
+50% {
+  transform: translate(-50%, -73%) rotate(180deg);
+} 
+100% {
+  transform: translate(-50%, -70%) rotate(360deg);
+}
+}

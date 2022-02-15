@@ -1,0 +1,9 @@
+<view class="container">
+    <view class='bold' style="margin-top: 200rpx;font-size: 50rpx;">
+        <text>选个喝水方案吧</text>
+    </view>
+    <view class='content'>
+        
+    </view>
+    <button bindtap="getUserInfo" hover-class="btn-hover" class="blue-btn" style="width: 300rpx;">开始吧</button>
+</view>

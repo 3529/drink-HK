@@ -1,0 +1,26 @@
+function formatDate(inputTime) {
+  date = getDate(inputTime);
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  var d = date.getDate();
+  var h = date.getHours();
+  var m1 = date.getMinutes();
+  var s = date.getSeconds();
+  if (h < 10) {
+    h = '0' + h
+  }
+  if (m1 < 10) {
+    m1 = '0' + m1
+  }
+  if (s < 10) {
+    s = '0' + s
+  }
+  
+  m = m < 10 ? ("0" + m) : m;
+  d = d < 10 ? ("0" + d) : d;
+  return y + "-" + m + "-" + d + " " + h + ":" + m1 + ":" + s;
+}
+
+module.exports = {
+  formatDate: formatDate
+};

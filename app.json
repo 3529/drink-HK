@@ -1,0 +1,42 @@
+{
+    "pages": [
+        "pages/loading/loading",
+        "pages/guide/guide",
+        "pages/index/index",
+        "pages/my/my",
+        "pages/clog/clog"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#333333",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "white",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "iconPath": "static/images/home_icon.png",
+                "selectedIconPath": "static/images/home_active_icon.png",
+                "text": "喝水"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "iconPath": "static/images/my_icon.png",
+                "selectedIconPath": "static/images/my_active_icon.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+        "van-button": "@vant/weapp/button/index",
+        "van-popup": "@vant/weapp/popup/index",
+        "van-slider": "@vant/weapp/slider/index",
+        "van-divider": "@vant/weapp/divider/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index"
+    }
+}

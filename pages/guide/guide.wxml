@@ -1,0 +1,14 @@
+<!--pages/guide/guide.wxml-->
+<view class="container">
+    <view class='bold' style="margin-top: 200rpx;font-size: 50rpx;">
+        <text>不要口渴的时候才去喝水</text>
+    </view>
+    <view class='content'>
+        <view>HI!</view>
+        <view>我是小管家</view>
+        <view>从今天起</view>
+        <view>我喊你喝水哦</view>
+    </view>
+    <image src="../../static/images/manworks.png" mode='aspectFit' alt="" style="height: 500rpx;" />
+    <button bindtap="getUserInfo" hover-class="btn-hover" class="blue-btn" style="width: 300rpx;">开始吧</button>
+</view>
