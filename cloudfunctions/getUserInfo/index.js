@@ -2,34 +2,21 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init()
-
+const db = cloud.database()
+const user = db.collection('user')
 // 云函数入口函数
 exports.main = async (event, context) => {
     const wxContext = cloud.getWXContext()
-    // console.log(event)
-
     const openid = wxContext.OPENID
-    if (openid !== event.openid) {
-        return {
-            msg: "openid不合法",
-            code: "-1",
-            function:"getUserInfo"
-        }
-    }
 
-    console.log(event)
-    const db = cloud.database()
-    const user = db.collection('user')
     user.where({
             openid
         })
         .get()
         .then(res => {
-            console.log(res)
-            
             if (!res.data.length) {
-                console.log('不存在')
                 // 用户不存在
+                console.log('不存在')
                 cloud.callFunction({
                     name: "addUser",
                     data: event,
@@ -39,8 +26,8 @@ exports.main = async (event, context) => {
                 })
 
             } else {
-                console.log('用户已存在')
                 // 用户已存在
+                console.log('用户已存在')
                 cloud.callFunction({
                     name: "updateUser",
                     data: event,

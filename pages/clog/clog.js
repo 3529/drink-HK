@@ -10,6 +10,9 @@ Page({
     clogList: []
   },
   getClog() {
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.cloud.callFunction({
       name: "getCLog",
       success: res => {
@@ -19,6 +22,7 @@ Page({
         })
       },
       complete:()=>{
+        wx.hideLoading()
         wx.stopPullDownRefresh()
       }
     })

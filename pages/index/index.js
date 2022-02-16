@@ -10,7 +10,7 @@ Page({
     clockTimes: [],
     waitPushData: {},
     isClockIn: false,
-    todayWaterIntake:0
+    todayWaterIntake: 0
   },
   changeCurrentIndex(event) {
     this.setData({
@@ -38,7 +38,7 @@ Page({
    */
   showClockIn() {
     this.initClockTimes()
-    
+
     this.setData({
       clockInShow: true
     })
@@ -126,10 +126,10 @@ Page({
       name: cloudFunctionName,
       data: clockInData,
       success: res => {
-        if (res.result.code !== 0) {
+        if (!res.result.success) {
           wx.showToast({
-            title: res.result.msg,
-            icon: "none" 
+            title: res.result.errMsg,
+            icon: "none"
           })
         } else {
           console.log(cloudFunctionName)
@@ -188,23 +188,28 @@ Page({
     wx.cloud.callFunction({
       name: "getClockInState",
       success: res => {
-        console.log(res)
+        const resData = res.result.data
         this.setData({
-          todayWaterIntake:res.result.todayWaterIntake
+          todayWaterIntake: resData.todayWaterIntake
         })
-        if (res.result.clockInData.length) {
-          this.setData({ 
-            waitPushData: res.result.clockInData[0],
+        
+        if (resData.clockInData.length) {
+          this.setData({
+            waitPushData: resData.clockInData[0],
             isClockIn: true
           })
         } else {
-          this.setData({ 
+          this.setData({
             isClockIn: false
           })
         }
       },
       fail: err => {
         console.log(err)
+        wx.showToast({
+          title: '系统异常，请稍后重试',
+          icon: "none"
+        })
       },
       complete: () => {
         // wx.hideLoading()
@@ -248,7 +253,7 @@ Page({
       if (i === 24) i = 0
       timesArr.push(i + ':00')
       timesArr.push(i + ':30')
-    } 
+    }
     console.log(timesArr)
     this.setData({
       clockTimes: timesArr

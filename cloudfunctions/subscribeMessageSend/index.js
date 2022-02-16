@@ -28,7 +28,7 @@ exports.main = async (event, context) => {
     await push_queue.where({
       openid
     }).remove()
-    
+
     await push_record.where({
       openid,
       finish: 0
@@ -37,12 +37,11 @@ exports.main = async (event, context) => {
         finish: 1
       }
     })
-    // result 结构
-    // { errCode: 0, errMsg: 'openapi.templateMessage.send:ok' }
     return result
-  } catch (err) {
-    // 错误处理
-    // err.errCode !== 0
-    throw err
+  } catch (e) {
+    return {
+      success: false,
+      errMsg: e
+    }
   }
 }

@@ -9,7 +9,6 @@ const push_queue = db.collection('push_queue')
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  console.log('执行成功')
   // 获取当前 时
   let currentH = Number(moment(new Date()).format("H"))
   // 获取当前 分
