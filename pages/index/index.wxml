@@ -70,5 +70,7 @@
     <!-- <button bindtap="sendMessage" class="mt-60" type="primary">测试推送</button> -->
     <!-- <button bindtap="subscribe">订阅</button>
         <button bindtap="sendMessage">推送</button> -->
+      <button class='mt-60' bindtap="navTo" data-page-url="pages/analysis/analysis">抖音去水印</button>
+
   </view>
 </view>

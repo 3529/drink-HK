@@ -12,6 +12,11 @@ Page({
     isClockIn: false,
     todayWaterIntake: 0
   },
+  navTo(e){
+    wx.navigateTo({
+      url: "../../" + e.currentTarget.dataset.pageUrl
+    })
+  },
   changeCurrentIndex(event) {
     this.setData({
       currentIndex: event.currentTarget.dataset.index

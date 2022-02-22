@@ -4,7 +4,8 @@
         "pages/guide/guide",
         "pages/index/index",
         "pages/my/my",
-        "pages/clog/clog"
+        "pages/clog/clog",
+        "pages/analysis/analysis"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -37,6 +38,7 @@
         "van-slider": "@vant/weapp/slider/index",
         "van-divider": "@vant/weapp/divider/index",
         "van-cell": "@vant/weapp/cell/index",
-        "van-cell-group": "@vant/weapp/cell-group/index"
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-field": "@vant/weapp/field/index"
     }
 }

@@ -1,0 +1,16 @@
+<view>
+  <van-cell-group>
+    <van-field value="{{ sourceVideoUrl }}" bind:change='handleVideoUrlChange' clearable label="链接" type="textarea" placeholder="请粘贴·抖音短视频·链接，不需要删除文字描述，系统自动识别" autosize="{{autosize}}" border="{{ false }}" />
+  </van-cell-group>
+  <view class='mt-30'></view>
+  <van-button type="info" block bindtap="removeWatermark">一秒去水印</van-button>
+  <view wx:if="{{showVideo}}">
+    <video src="{{finallyUrl}}"></video>
+    <van-button type="primary" bindtap="handleDownload" block data-link="{{finallyUrl}}">保存视频</van-button>
+  </view>
+</view>
+
+
+<!-- 
+<span bindtap="handleDownload" data-link="{{video}}">下载视频</span>
+<video style="margin: 0 auto;" src="{{video}}"></video> -->
